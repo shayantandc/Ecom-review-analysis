@@ -1,0 +1,145 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Scrapping\\Scrapping.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Scrapping\\Scrapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Scrapping\\Scrapping.csproj",
+        "projectName": "Scrapping",
+        "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Scrapping\\Scrapping.csproj",
+        "packagesPath": "C:\\Users\\sduttachoudhury\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Scrapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sduttachoudhury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj": {
+                "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.53, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj",
+        "projectName": "Sentiment_Analysis_Service",
+        "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj",
+        "packagesPath": "C:\\Users\\sduttachoudhury\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sduttachoudhury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
