@@ -34,7 +34,7 @@ namespace Scrapping.Controllers
             }
         }
 
-        [HttpPost("GetAverageSentiment")]
+        [HttpGet("GetAverageSentiment")]
         public IActionResult GetAverageSentiment()
         {
             try
