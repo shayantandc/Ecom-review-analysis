@@ -31,10 +31,7 @@ C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\obj\Debug\net6.0\Scrap
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\obj\Debug\net6.0\Scrapping.genruntimeconfig.cache
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\obj\Debug\net6.0\ref\Scrapping.dll
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\HtmlAgilityPack.dll
-C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis_Service.deps.json
-C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis_Service.runtimeconfig.json
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\MLModel1.zip
-C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis_Service.exe
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Microsoft.ML.Core.dll
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Microsoft.ML.Data.dll
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Microsoft.ML.KMeansClustering.dll
@@ -53,5 +50,14 @@ C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\runti
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\runtimes\osx-x64\native\libLdaNative.dylib
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\runtimes\win-x64\native\LdaNative.dll
 C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\runtimes\win-x86\native\LdaNative.dll
-C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis_Service.dll
-C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis_Service.pdb
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\VaderSharp.dll
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis.deps.json
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis.runtimeconfig.json
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis.exe
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Service.deps.json
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Service.runtimeconfig.json
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Service.exe
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis.dll
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Service.dll
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Analysis.pdb
+C:\Users\sduttachoudhury\source\repos\Scrapping\Scrapping\bin\Debug\net6.0\Sentiment_Service.pdb

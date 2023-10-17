@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-namespace Sentiment_Analysis
+namespace Scrapping
 {
     public partial class MLModel1
     {

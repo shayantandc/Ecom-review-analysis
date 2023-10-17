@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
-using Sentiment_Analysis_Service;
 using System;
+using Sentiment_Service;
 using System.Text.RegularExpressions;
 
 namespace Scrapping_Namesapce
@@ -18,8 +18,6 @@ namespace Scrapping_Namesapce
 
         public async Task<string> GetHtml(string url)
         {
-            //return _httpClient.GetStringAsync(BuildUrl(NormalizeAddress(address)));
-
             var web = new HtmlWeb();
             var htmlDoc = web.Load(url);
             var titleNode = htmlDoc.DocumentNode.SelectSingleNode("//head/following-sibling::*");
@@ -31,15 +29,6 @@ namespace Scrapping_Namesapce
 
             return null;
 
-            //var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            //var response = await httpClient.GetAsync("https://www.amazon.in/Dell-R5-5500U-35-56cm-Spill-Resistant-Keyboard/dp/B0C1434CCN/ref=sr_1_1_sspa?crid=8XYSP7171OE9&keywords=dell+laptop&nsdOptOutParam=true&qid=1695794172&sprefix=dell+laptop%2Caps%2C259&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1");
-
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    return await response.Content.ReadAsStringAsync();
-            //}
-
-            //return null;
         }
 
 
@@ -52,20 +41,8 @@ namespace Scrapping_Namesapce
             return listingDetails;
         }
 
-
-        //private void ParseListingPrice(HtmlDocument htmlDoc, ListingDetail listingDetail)
-        //{
-        //    var listingPriceElement = htmlDoc.DocumentNode.SelectSingleNode("//span[@data-testid=\"price\"]/span[1]");
-        //    if (listingPriceElement != null)
-        //    {
-        //        var listingPriceText = listingPriceElement.InnerHtml;
-        //        listingDetail.Comments = decimal.Parse(listingPriceText.Replace("$", "")).ToString();
-        //    }
-        //}
-
         public void ParseComments(HtmlDocument htmlDoc, List<ListingDetail> listingDetails)
         {
-            // Find all div elements with the specified class
             var elements = htmlDoc.DocumentNode.SelectNodes("//div[contains(@class, 'a-expander-content reviewText review-text-content a-expander-partial-collapse-content')]");
 
             if (elements != null)
@@ -126,6 +103,84 @@ namespace Scrapping_Namesapce
             return countNegative > countPositive ? "Mostly it is negative" : "Mostly it is positive";
         }
 
+        public List<ListingDetail> GetTweets(IFormFile htmlFile)
+        {
+            string htmlContent;
+            using (var reader = new StreamReader(htmlFile.OpenReadStream()))
+            {
+                htmlContent = reader.ReadToEnd();
+            }
+
+            htmlContent = CleanUpHtml(htmlContent);
+
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(htmlContent);
+
+            var tweetNodes = doc.DocumentNode.SelectNodes("//span[contains(@class, 'css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0')]");
+
+            if (tweetNodes != null && tweetNodes.Any())
+            {
+                List<ListingDetail> listingDetails = new List<ListingDetail>();
+
+                foreach (var tweetNode in tweetNodes)
+                {
+                    var tweetText = tweetNode.InnerText.Trim();
+                    if (tweetText.Length > 35 && !tweetText.Contains("Rs") && !tweetText.Contains("%"))
+                    {
+                        if (!string.IsNullOrEmpty(tweetText))
+                        {
+                            var listingDetail = new ListingDetail
+                            {
+                                Comments = tweetText,
+                                Score = 0
+                            };
+                            listingDetails.Add(listingDetail);
+                        }
+                    }
+                }
+
+                return listingDetails;
+            }
+            else
+            {
+                return new List<ListingDetail>();
+            }
+        }
+
+        public string CleanUpHtml(string html)
+        {
+            html = Regex.Replace(html, @"\s+", " ");
+            html = Regex.Replace(html, @">\s+<", "><");
+            return html;
+        }
+
+        public List<ListingDetail> PerformSentimentAnalysisTweet(List<ListingDetail> listingDetails)
+        {
+            var sentimentAnalyzer = new AnalysisImplement();
+            var updatedListingDetail = new List<ListingDetail>();
+
+            foreach (var detail in listingDetails)
+            {
+                string[] comments = detail.Comments.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var comment in comments)
+                {
+                    int sentimentScore = sentimentAnalyzer.PerformSentimentAnalysis(comment);
+                    string feedback = sentimentScore == 0 ? "negative" : "positive";
+
+                    var updatedDetail = new ListingDetail
+                    {
+                        Comments = comment,
+                        Score = sentimentScore,
+                        Feedback = feedback
+                    };
+
+                    updatedListingDetail.Add(updatedDetail);
+                }
+            }
+
+            return updatedListingDetail;
+        }
 
 
     }

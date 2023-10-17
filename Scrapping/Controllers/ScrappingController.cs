@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HtmlAgilityPack;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
 using Scrapping_Namesapce;
-using Sentiment_Analysis_Service;
+using Sentiment_Service;
+using System;
+using System.Text.RegularExpressions;
 
 namespace Scrapping.Controllers
 {
@@ -54,6 +58,35 @@ namespace Scrapping.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        [HttpPost("GetTweetsSentiment")]
+        public IActionResult GetTweetsSentiment(IFormFile htmlTwitterFile)
+        {
+            try
+            {
+                if (htmlTwitterFile == null || htmlTwitterFile.Length == 0)
+                {
+                    return BadRequest("No HTML file provided.");
+                }
+
+                var tweets = _scraptool.GetTweets(htmlTwitterFile);
+                var updatedtweetsinfo = _scraptool.PerformSentimentAnalysisTweet(tweets);
+
+                if (updatedtweetsinfo.Any())
+                {
+                    return Ok(updatedtweetsinfo);
+                }
+                else
+                {
+                    return NotFound("No tweets found on the page.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
 
 
 

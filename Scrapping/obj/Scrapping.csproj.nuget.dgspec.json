@@ -28,8 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj": {
-                "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj"
+              "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis\\Sentiment_Analysis.csproj": {
+                "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis\\Sentiment_Analysis.csproj"
+              },
+              "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Service\\Sentiment_Service.csproj": {
+                "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Service\\Sentiment_Service.csproj"
               }
             }
           }
@@ -44,9 +47,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CodingUpAStorm.VaderSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.53, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[2.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -80,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj": {
+    "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis\\Sentiment_Analysis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj",
-        "projectName": "Sentiment_Analysis_Service",
-        "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\Sentiment_Analysis_Service.csproj",
+        "projectUniqueName": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis\\Sentiment_Analysis.csproj",
+        "projectName": "Sentiment_Analysis",
+        "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis\\Sentiment_Analysis.csproj",
         "packagesPath": "C:\\Users\\sduttachoudhury\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis_Service\\obj\\",
+        "outputPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Analysis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sduttachoudhury\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -118,7 +129,68 @@
           "dependencies": {
             "Microsoft.ML": {
               "target": "Package",
-              "version": "[1.7.1, )"
+              "version": "[2.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Service\\Sentiment_Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Service\\Sentiment_Service.csproj",
+        "projectName": "Sentiment_Service",
+        "projectPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Service\\Sentiment_Service.csproj",
+        "packagesPath": "C:\\Users\\sduttachoudhury\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sduttachoudhury\\source\\repos\\Scrapping\\Sentiment_Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sduttachoudhury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[2.0.1, )"
             }
           },
           "imports": [

@@ -7,9 +7,9 @@ namespace Scrapping_Namesapce
     {
         Task<List<ListingDetail>> PerformSentimentAnalysisAsync(string url);
         Task<string> GetHtml(string url);
-
         public List<ListingDetail> HParse(string html);
-        //ListingDetail ParseComments(HtmlDocument htmlDoc, ListingDetail listingDetail);
         string AnalyzeAverageSentiment(List<ListingDetail> listingDetails);
+        public List<ListingDetail> GetTweets(IFormFile htmlFile);
+        public List<ListingDetail> PerformSentimentAnalysisTweet(List<ListingDetail> listingDetails);
     }
 }
