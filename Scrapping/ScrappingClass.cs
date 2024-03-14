@@ -14,8 +14,6 @@ namespace Scrapping_Namesapce
             _httpClientFactory = httpClientFactory;
         }
 
-
-
         public async Task<string> GetHtml(string url)
         {
             var web = new HtmlWeb();
